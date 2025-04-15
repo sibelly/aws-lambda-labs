@@ -4,6 +4,7 @@ https://aws.amazon.com/blogs/compute/migrating-aws-lambda-functions-from-the-go1
 ## Start
 ```
 sls offline --config serverless.yml
+serverless invoke local --function Ping --debug
 
 ```
 
