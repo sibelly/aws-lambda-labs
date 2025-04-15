@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "serverless-go-plugin": "^2.4.1",
+    "serverless-offline": "^14.4.0"
+  }
+}

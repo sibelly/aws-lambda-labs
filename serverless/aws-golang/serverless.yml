@@ -1,0 +1,30 @@
+service: aws-golang
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: provided.al2
+  architecture: arm64
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+
+package:
+  individually: true # <- package each function individually, to prevent file name conflicts
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+    useDocker: true
+
+functions:
+  ping:
+    name: ping
+    handler: bootstrap # <- the handler name must be bootstrap and in the root of the zip
+    package:
+      artifact: bin/ping.zip # override the default artifact handling to use the built zip
+    events:
+      - http:
+          path: /ping
+          method: get

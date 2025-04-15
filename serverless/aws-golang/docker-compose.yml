@@ -1,0 +1,13 @@
+services:
+  lambda:
+    image: public.ecr.aws/lambda/provided:al2
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "YOUR ENDPOINT HERE"
+      OTEL_SERVICE_NAME: "lambda-go"
+      STAGE: "dev"
+    volumes:
+      - ./bin:/var/task
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "9000:8080"
+    command: main

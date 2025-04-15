@@ -1,0 +1,25 @@
+{
+  "name": "golang-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sls offline --config serverless.yml"
+  },
+  "devDependencies": {
+    "serverless": "^4.4.0",
+    "serverless-go-plugin": "^2.4.1",
+    "serverless-offline": "^14.4.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "overrides": {
+    "serverless-offline": {
+      "serverless": "$serverless"
+    },
+    "serverless-go-plugin": {
+      "serverless": "$serverless"
+    }
+  }
+}
